@@ -112,20 +112,25 @@ class _FindDropdownState<T> extends State<FindDropdown<T>> {
                   child: (widget.dropdownBuilder != null)
                       ? widget.dropdownBuilder(context, snapshot.data)
                       : Container(
-                          padding: EdgeInsets.fromLTRB(15, 5, 5, 5),
+                          padding: EdgeInsets.fromLTRB(0, 5, 5, 5),
                           height: 40,
                           decoration: BoxDecoration(
-                            color: Colors.white,
-                            border: Border.all(
-                              width: 1,
-                              color: Theme.of(context).dividerColor,
+                            color: Colors.transparent,
+                            border: Border(
+                              bottom: BorderSide(
+                                color: Colors.grey,
+                                width: 1
+                              )
                             ),
-                            borderRadius: BorderRadius.circular(4.0),
                           ),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Text(snapshot.data?.toString() ?? ""),
+                              Container(
+                                width: MediaQuery.of(context).size.width * 0.7,
+                                height: widget.labelStyle.fontSize,
+                                child: Text(snapshot.data?.toString() ?? "", overflow: TextOverflow.ellipsis, maxLines: 1,),
+                              ),
                               Align(
                                 alignment: Alignment.centerRight,
                                 child: Row(
