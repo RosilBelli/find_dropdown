@@ -124,16 +124,14 @@ class _FindDropdownState<T> extends State<FindDropdown<T>> {
                             ),
                           ),
                           child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: <Widget>[
-                              Container(
-                                width: MediaQuery.of(context).size.width * 0.7,
-                                height: widget.labelStyle.fontSize,
+                              Expanded(
                                 child: Text(snapshot.data?.toString() ?? "", style: TextStyle(fontSize:20), overflow: TextOverflow.ellipsis, maxLines: 1,),
                               ),
                               Align(
                                 alignment: Alignment.centerRight,
                                 child: Row(
+                                  mainAxisSize: MainAxisSize.min,
                                   children: <Widget>[
                                     if (snapshot.data != null &&
                                         widget.showClearButton)
