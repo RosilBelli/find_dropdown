@@ -129,7 +129,7 @@ class _FindDropdownState<T> extends State<FindDropdown<T>> {
                               Container(
                                 width: MediaQuery.of(context).size.width * 0.7,
                                 height: widget.labelStyle.fontSize,
-                                child: Text(snapshot.data?.toString() ?? "", overflow: TextOverflow.ellipsis, maxLines: 1,),
+                                child: Text(snapshot.data?.toString() ?? "", style: TextStyle(fontSize:20), overflow: TextOverflow.ellipsis, maxLines: 1,),
                               ),
                               Align(
                                 alignment: Alignment.centerRight,
